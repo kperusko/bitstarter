@@ -61,6 +61,11 @@ var checkHtmlFromUrl = function(url, checks){
     });
 };
 
+var checkHtmlFromFile = function(filepath, programs.checks){
+     var checkJson = checkHtml(result, checks);
+    printFormattedJSON(checkJson);
+};
+
 var printFormattedJSON = function(json){
     var outJson = JSON.stringify(json, null, 4);
     console.log(outJson);
@@ -76,8 +81,7 @@ if(require.main == module) {
     if ( program.url ){
 	checkHtmlFromUrl(program.url, program.checks);
     }else{
-	var checkJson = checkHtml(program.file, program.checks);
-	printFormattedJSON(checkJson);
+	checkHtmlFromFile(program.file, program.checks);
     }
 } else {
     exports.checkHtmlFile = checkHtmlFile;
