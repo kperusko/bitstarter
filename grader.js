@@ -61,7 +61,7 @@ var checkHtmlFromUrl = function(url, checks){
     });
 };
 
-var checkHtmlFromFile = function(filepath, programs.checks){
+var checkHtmlFromFile = function(filepath, checks){
      var checkJson = checkHtml(result, checks);
     printFormattedJSON(checkJson);
 };
